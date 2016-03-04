@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-source support/bash_output.sh
+source bash_output.sh
 
 install_homebrew() {
   bash provision/brew.sh
