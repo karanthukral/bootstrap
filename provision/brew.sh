@@ -10,11 +10,14 @@ else
 fi
 
 # Tap Cask
-echo "Brew Cask: Tapping caskroom/cask"
+echo "Brew Cask: Tapping caskroom/cask and caskroom/fonts"
 brew tap caskroom/cask 1>/dev/null
+brew tap caskroom/fonts 1>/dev/null
 
 # Install Brew Packages
-for pkg in brew-cask cmake fswatch gcc gnupg gnupg2 go imagemagick mercurial mysql node packer phantomjs postgresql python redis subversion wget; do
+for pkg in brew-cask cmake fswatch gcc gnupg gnupg2 go imagemagick mercurial
+  mysql node phantomjs postgresql python redis wget battery autojump git
+  htop-osx tig tmux wifi-password; do
   if brew list -1 | grep -q "^${pkg}\$"; then
     echo "Brew: Package '$pkg' is already installed"
   else
@@ -24,7 +27,10 @@ for pkg in brew-cask cmake fswatch gcc gnupg gnupg2 go imagemagick mercurial mys
 done
 
 # Install Brew Casks
-for pkg in 1password adium charles dash dropbox flux google-chrome google-drive heroku-toolbelt java karabiner licecap sketch skype slack spotify steam sublime-text vmware-fusion; do
+for pkg in 1password adium dropbox flux google-chrome google-drive
+  heroku-toolbelt java karabiner licecap sketch skype slack spotify steam
+  sublime-text vmware-fusion font-hack firefox alfred bartender font-octicons
+  iterm2 selfcontrol; do
   if brew cask info $pkg | grep -q "Not installed"; then
     echo "Brew Cask: Installing '$pkg'"
     brew cask install --appdir="/Applications" $pkg 1>/dev/null
