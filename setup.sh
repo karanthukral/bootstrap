@@ -31,11 +31,6 @@ install_ruby() {
   bash provision/rbenv.sh
 }
 
-install_script() {
-  echo "Running Dotfiles setup."
-  bash install.sh
-}
-
 install_various() {
   echo "Finalizing computr setup."
   bash various.sh
