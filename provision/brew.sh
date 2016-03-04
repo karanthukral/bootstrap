@@ -30,7 +30,7 @@ done
 for pkg in 1password adium dropbox flux google-chrome google-drive
   heroku-toolbelt java karabiner licecap sketch skype slack spotify steam
   sublime-text vmware-fusion font-hack firefox alfred bartender font-octicons
-  iterm2 selfcontrol; do
+  iterm2 selfcontrol viscosity transmission; do
   if brew cask info $pkg | grep -q "Not installed"; then
     echo "Brew Cask: Installing '$pkg'"
     brew cask install --appdir="/Applications" $pkg 1>/dev/null
