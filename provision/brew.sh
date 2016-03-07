@@ -25,12 +25,12 @@ for pkg in brew-cask cmake fswatch gcc gnupg gnupg2 go imagemagick mercurial mys
 done
 
 ## Install Brew Casks
-#for pkg in 1password adium dropbox flux google-chrome google-drive heroku-toolbelt java licecap sketch skype slack spotify steam sublime-text vmware-fusion font-hack firefox alfred bartender font-octicons
-  #iterm2 selfcontrol viscosity transmission; do
-  #if brew cask info $pkg | grep -q "Not installed"; then
-    #echo "Brew Cask: Installing '$pkg'"
-    #brew cask install --appdir="/Applications" $pkg 1>/dev/null
-  #else
-    #echo "Brew Cask: Package '$pkg' is already installed"
-  #fi
-#done
+for pkg in 1password adium dropbox flux google-chrome google-drive heroku-toolbelt java licecap sketch skype slack spotify steam sublime-text vmware-fusion font-hack firefox alfred bartender font-octicons
+  iterm2 selfcontrol viscosity transmission; do
+  if brew cask info $pkg | grep -q "Not installed"; then
+    echo "Brew Cask: Installing '$pkg'"
+    brew cask install --appdir="/Applications" $pkg 1>/dev/null
+  else
+    echo "Brew Cask: Package '$pkg' is already installed"
+  fi
+done
